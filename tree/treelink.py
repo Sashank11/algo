@@ -127,5 +127,37 @@ def  get_deepest_node(root_node):
 
 #print(get_deepest_node(new_bt).data)
 
+def delete_deepest_node(root_node, d_node):
+    if not root_node:
+        return
+    else:
+        custom_queue = q.Queue()
+        custom_queue.enqueue(root_node)
+        while not(custom_queue.isEmpty()):
+            root = custom_queue.dequeue()
+            if root.value is d_node:
+                root.value = None
+                return
+            if root.value.right_child:
+                if root.value.right_child is d_node:
+                    root.value.right_child = None
+                    return
+                else:
+                    custom_queue.enqueue(root.value.right_child)
+            if root.value.left_child:
+                if root.value.left_child is d_node:
+                    root.value.left_child = None
+                    return
+                else:
+                    custom_queue.enqueue(root.value.left_child)
+
+# deepest_node = get_deepest_node(new_bt)
+# delete_deepest_node(new_bt, deepest_node)
+# deepest_node = get_deepest_node(new_bt)
+# delete_deepest_node(new_bt, deepest_node)
+# level_order_traversal(new_bt)
+
+
+
 
 
