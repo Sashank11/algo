@@ -158,6 +158,27 @@ def delete_deepest_node(root_node, d_node):
 # level_order_traversal(new_bt)
 
 
+def delete_node_bt(root_node, node):
+    if not root_node:
+        return "The BT does not exist"
+    else:
+        custom_queue = q.Queue()
+        custom_queue.enqueue(root_node)
+        while not(custom_queue.isEmpty()):
+            root = custom_queue.dequeue()
+            if root.value.data == node:
+                d_node = get_deepest_node(root_node)
+                root.value.data = d_node.data
+                delete_deepest_node(root_node, d_node)
+                return 'The node has been deleted'
+            if root.value.left_child is not None:
+                custom_queue.enqueue(root.value.left_child)
+            if root.value.right_child is not None:
+                custom_queue.enqueue(root.value.right_child)
+        return "Failed"
+
+# delete_node_bt(new_bt, 'tea')
+# level_order_traversal(new_bt)
 
 
 
