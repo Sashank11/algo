@@ -180,5 +180,11 @@ def delete_node_bt(root_node, node):
 # delete_node_bt(new_bt, 'tea')
 # level_order_traversal(new_bt)
 
+def delete_bt(root_node):
+    root_node.data = None
+    root_node.left_child = None
+    root_node.right_child = None
+    return "The bt has been deleted"
 
-
+# delete_bt(new_bt)
+# level_order_traversal(new_bt)
