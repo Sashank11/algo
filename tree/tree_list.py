@@ -13,8 +13,8 @@ class Binary_tree:
 
     def search_node(self, node_value):
         for i in range(len(self.custom_list)):
-            if self.custom_list[i] == node_value:
-                return "Node found"
+            if self.custom_list[i +1] == node_value:
+                return "Node found " + "N" + str(i +1)
         return "Node not found"
 
 
