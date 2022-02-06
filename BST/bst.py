@@ -56,6 +56,21 @@ def level_order_traversal(root_node):
             if root.value.right_child is not None:
                 custom_queue.enqueue(root.value.right_child)
 
+def search_node(root_node, node_value):
+    if root_node.data == node_value:
+        print("The value is found")
+    elif node_value < root_node.data:
+        if root_node.left_child.data == node_value:
+            print("The value is found")
+        else:
+            search_node(root_node.left_child, node_value)
+    else:
+        if root_node.right_child.data == node_value:
+            print("The value is found")
+        else:
+            search_node(root_node.right_child, node_value)
+    return "Value not found"
+
 
 
 new_bst = BST_node(None)
@@ -72,4 +87,5 @@ insert_node(new_bst, 20)
 insert_node(new_bst, 40)
 #pre_order_traversal(new_bst)
 #post_order_traversal(new_bst)
-level_order_traversal(new_bst)
+#level_order_traversal(new_bst)
+search_node(new_bst, 100)
