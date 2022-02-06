@@ -58,6 +58,11 @@ class Binary_tree:
                 self.last_used_index -=1
                 return "The node has been deleted"
 
+    def delete_bt(self):
+        self.custom_list = None
+        return "The bt has been successfully deleted"
+
+
 new_bt = Binary_tree(8)
 new_bt.insert_node("Drinks")
 new_bt.insert_node("Hot")
@@ -68,6 +73,6 @@ new_bt.insert_node("Coffee")
 #new_bt.pre_order_traversal(1)
 #new_bt.in_order_traversal(1)
 #new_bt.post_order_traversal(1)
-
 print(new_bt.delete_node("Hot"))
+#print(new_bt.delete_bt())
 new_bt.level_order_traversal(1)
