@@ -11,10 +11,15 @@ class Binary_tree:
         self.last_used_index +=1
         return "The value has been successfully inserted"
 
+    def search_node(self, node_value):
+        for i in range(len(self.custom_list)):
+            if self.custom_list[i] == node_value:
+                return "Node found"
+        return "Node not found"
 
 
 new_bt = Binary_tree(8)
-print(new_bt.insert_node("Drinks"))
-print(new_bt.insert_node("Hot"))
-print(new_bt.insert_node("Cold"))
-
+new_bt.insert_node("Drinks")
+new_bt.insert_node("Hot")
+new_bt.insert_node("Cold")
+print(new_bt.search_node("Cold"))
