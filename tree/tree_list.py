@@ -31,6 +31,14 @@ class Binary_tree:
         print(self.custom_list[index])
         self.pre_order_traversal(index*2 +1)
 
+
+    def post_order_traversal(self, index):
+        if index > self.last_used_index:
+            return
+        self.post_order_traversal(index*2)
+        self.post_order_traversal(index*2 +1)
+        print(self.custom_list[index])
+
 new_bt = Binary_tree(8)
 new_bt.insert_node("Drinks")
 new_bt.insert_node("Hot")
@@ -39,4 +47,5 @@ new_bt.insert_node("Tea")
 new_bt.insert_node("Coffee")
 #print(new_bt.search_node("Cold"))
 #new_bt.pre_order_traversal(1)
-new_bt.in_order_traversal(1)
+#new_bt.in_order_traversal(1)
+new_bt.post_order_traversal(1)
