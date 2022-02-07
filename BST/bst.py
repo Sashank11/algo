@@ -71,6 +71,40 @@ def search_node(root_node, node_value):
             search_node(root_node.right_child, node_value)
     return "Value not found"
 
+def min_value_node(bst_node): # find successor node
+    current = bst_node
+    while (current.left_child is not None):
+        current = current.left_child
+    return current
+
+def delete_node(root_node, node_value): #O(logn)
+    if root_node is None:
+        return "No Nodes exist"
+    #watch again
+    if node_value < root_node.data:
+        root_node.left_child = delete_node(root_node.left_child, node_value)
+    elif node_value < root_node.data:
+        root_node.right_child = delete_node(root_node.right_child, node_value)
+    else:
+        if root_node.left_child is None:
+            temp = root_node.right_child
+            root_node = None
+            return temp
+        if root_node.right_child is None:
+            temp = root_node.left_child
+            root_node = None
+            return temp
+        temp = min_value_node(root_node.right_child)
+        root_node.data = temp.data
+        root_node.right_child = delete_node(root_node.right_child, temp.data)
+    return root_node
+
+
+def delete_bst(root_node):
+    root_node.data = None
+    root_node.left_child = None
+    root_node.right_child = None
+    return "BST is deleted"
 
 
 new_bst = BST_node(None)
@@ -87,5 +121,6 @@ insert_node(new_bst, 20)
 insert_node(new_bst, 40)
 #pre_order_traversal(new_bst)
 #post_order_traversal(new_bst)
-#level_order_traversal(new_bst)
-search_node(new_bst, 100)
+#search_node(new_bst, 100)
+delete_node(new_bst, 70)
+level_order_traversal(new_bst)
