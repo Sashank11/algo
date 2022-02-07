@@ -116,7 +116,7 @@ class DoublyLinkedList:
                 currentNode.prev = None
                 currentNode = currentNode.next
             self.head = None
-            self.head = None
+            self.tail = None
             print("The DLL has been deleted")
 
 doublyLL = DoublyLinkedList()
