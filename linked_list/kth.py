@@ -8,7 +8,7 @@ def kthToLast(ll, k):
         if pointer2 is None:
             return None
         else:
-            pointer2 = pointer2.next
+            pointer2 = pointer2.next # using two pointers
 
     while pointer2:
         pointer1 = pointer1.next
