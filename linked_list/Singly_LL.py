@@ -123,7 +123,7 @@ print([node.value for node in singlyLinkedList])
 
 #     def insertSLL(self, value, location):
 #         newNode = Node(value)
-#         if self.head is None:
+#         if self.head is None:                     # This does not work
 #             self.head = newNode
 #             self.tail = newNode
         
