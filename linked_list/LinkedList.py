@@ -49,6 +49,6 @@ class LinkedList:
         return self
 
 customLL = LinkedList()
-#customLL.generate(10, 0, 99)
+#customLL.generate(10, 1, 99)
 #print(customLL)
 #print(len(customLL))
