@@ -20,7 +20,7 @@ class LinkedList:
             curNode = curNode.next
     
     def __str__(self):
-        values = [str(x.value) for x in self]  # -> not in head how
+        values = [str(x.value) for x in self]  # -> not in head how 
         return ' -> '.join (values)
 
     def __len__(self):
