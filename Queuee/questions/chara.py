@@ -44,7 +44,6 @@ def sortQueue(q):
         min_index = minIndex(q, q.qsize() - i)
         insertMinToRear(q, min_index)
 
-
 if __name__ == '__main__':
     q = Queue()
     q.put('b')
