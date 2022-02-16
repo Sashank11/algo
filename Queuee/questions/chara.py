@@ -5,7 +5,7 @@ from queue import Queue
 # Queue elements after sortedIndex are
 # already sorted. This function returns
 # index of minimum element from front to
-# sortedIndex
+
 def minIndex(q, sortedIndex):
     min_index = -1
     min_val = 999999999999
